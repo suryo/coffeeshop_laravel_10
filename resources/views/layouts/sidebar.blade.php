@@ -5,7 +5,7 @@
     <div class="navbar-brand-box" style="background-color: #A5F1E9">
         <div class="logo">
             <span class="logo-lg" style="margin-left: 20px">
-                <img src="{{ URL::asset('/assets/images/logo-coffee.jpg') }}" alt="" height="60" width="100">
+                <img src="{{ URL::asset('/assets/images/coffeeshop.png') }}" alt="" height="80" width="100">
             </span>
         </div>
     </div>
