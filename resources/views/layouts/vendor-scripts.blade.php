@@ -8,6 +8,8 @@
 <script src="{{ URL::asset('/assets/libs/jquery-counterup/jquery-counterup.min.js')}}"></script>
 <script src="{{ URL::asset('/assets/js/app.min.js')}}"></script>
 
+<script src="https://cdn.datatables.net/v/dt/dt-2.0.7/datatables.min.js"></script>
+
 @yield('script')
 
 <!-- App js -->

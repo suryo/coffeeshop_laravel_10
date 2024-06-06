@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Models\Product;
+use App\Models\Brand;
+use App\Models\ProductCategory;
 use Illuminate\Http\Request;
 
 class ProductController extends Controller
@@ -15,7 +17,9 @@ class ProductController extends Controller
 
     public function create()
     {
-        return view('products.create');
+        $brands = Brand::all();
+        $categories = ProductCategory::all();
+        return view('products.create', compact('brands','categories'));
     }
 
     public function store(Request $request)
@@ -28,12 +32,19 @@ class ProductController extends Controller
             'product_brand' => 'required|integer',
             'product_price' => 'required|integer',
             'fileimages' => 'nullable|string',
-            'status' => 'required|string',
-            'deleted' => 'required|in:true,false',
-            'slug' => 'required|string',
         ]);
+        $data = [
+            "sku" => $request->sku,
+            "product_category" => $request->product_category,
+            "product_name" => $request->product_name,
+            "product_detail" => $request->product_detail,
+            "product_brand" => $request->product_brand,
+            "product_price" => $request->product_price,
+            "status" => "show",
+            "slug" => $request->product_name
+        ];
 
-        Product::create($request->all());
+        Product::create($data);
 
         return redirect()->route('products.index')->with('success', 'Product created successfully.');
     }
@@ -45,7 +56,13 @@ class ProductController extends Controller
 
     public function edit(Product $product)
     {
-        return view('products.edit', compact('product'));
+        $brands = Brand::all();
+        $categories = ProductCategory::all();
+        $brand_name = Brand::where("id",$product->product_brand)
+                    ->get();
+        $category_name = ProductCategory::where("id",$product->product_category)
+                    ->get();
+        return view('products.edit', compact('product','brands','categories','brand_name','category_name'));
     }
 
     public function update(Request $request, Product $product)
@@ -57,13 +74,18 @@ class ProductController extends Controller
             'product_detail' => 'required|string',
             'product_brand' => 'required|integer',
             'product_price' => 'required|integer',
-            'fileimages' => 'nullable|string',
-            'status' => 'required|string',
-            'deleted' => 'required|in:true,false',
-            'slug' => 'required|string',
+            'fileimages' => 'nullable|string'
         ]);
+        $data = [
+            "sku" => $request->sku,
+            "product_category" => $request->product_category,
+            "product_name" => $request->product_name,
+            "product_detail" => $request->product_detail,
+            "product_brand" => $request->product_brand,
+            "product_price" => $request->product_price
+        ];
 
-        $product->update($request->all());
+        $product->update($data);
 
         return redirect()->route('products.index')->with('success', 'Product updated successfully.');
     }

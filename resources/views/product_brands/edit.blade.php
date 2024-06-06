@@ -1,6 +1,6 @@
 @extends('master')
 @section('title')
-    Product Categories
+    Product Brands
 @endsection
 @section('content')
     @component('layouts.breadcrumb')
@@ -8,24 +8,24 @@
             Coffee Shop
         @endslot
         @slot('title')
-            Product Categories
+            Product Brands
         @endslot
     @endcomponent
     <div class="container">
         <div class="row">
             <div class="col-md-12">
                 <div class="card">
-                    <div class="card-header">Edit Product Category</div>
+                    <div class="card-header">Edit Product Brand</div>
 
                     <div class="card-body">
-                        <form method="POST" action="{{ route('product_categories.update', $category->id) }}">
+                        <form method="POST" action="{{ route('product_brands.update', $brand->id) }}">
                             @csrf
                             <div class="form-group">
-                                <label for="product_category_name">Product Category Name</label>
-                                <input type="text" class="form-control" id="product_category_name" name="product_category_name" value="{{ $category->product_category_name }}" required>
+                                <label for="product_brand">Product Brand Name</label>
+                                <input type="text" class="form-control" id="product_brand" name="product_brand" value="{{ $brand->product_brand }}" required>
                             </div>
                             <button type="submit" class="btn btn-primary btn-sm mt-3">Update</button>
-                            <a href="/productcategory" class="btn btn-secondary btn-sm position-absolute end-0 mt-3 me-3"><i class="uil uil-arrow-left"></i> Back</a>
+                            <a href="/productbrand" class="btn btn-secondary btn-sm position-absolute end-0 mt-3 me-3"><i class="uil uil-arrow-left"></i> Back</a>
                         </form>
                     </div>
                 </div>

@@ -22,11 +22,14 @@ class ProductCategoryController extends Controller
     {
         $request->validate([
             'product_category_name' => 'required|string',
-            'status' => 'required|string',
-            'deleted' => 'required|in:false,true',
         ]);
+        $status  = "show";
+        $data    = [
+            "product_category_name" => $request->product_category_name,
+            "status" => $status
+        ];
 
-        ProductCategory::create($request->all());
+        ProductCategory::create($data);
 
         return redirect()->route('product_categories.index')->with('success', 'Product category created successfully.');
     }
@@ -45,18 +48,22 @@ class ProductCategoryController extends Controller
     {
         $request->validate([
             'product_category_name' => 'required|string',
-            'status' => 'required|string',
-            'deleted' => 'required|in:false,true',
         ]);
+        $data    = [
+            "product_category_name" => $request->product_category_name
+        ];
 
-        $category->update($request->all());
+        $category->update($data);
 
         return redirect()->route('product_categories.index')->with('success', 'Product category updated successfully.');
     }
 
     public function destroy(ProductCategory $category)
     {
-        $category->delete();
+        $data = [
+            "deleted" => true
+        ];
+        $category->update($data);
 
         return redirect()->route('product_categories.index')->with('success', 'Product category deleted successfully.');
     }
