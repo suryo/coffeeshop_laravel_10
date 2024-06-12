@@ -20,9 +20,9 @@
         <div class="d-flex">
 
             <div class="dropdown d-inline-block">
-                <button type="button" class="btn header-item noti-icon right-bar-toggle waves-effect">
+                <a href="/cart" type="button" class="btn header-item noti-icon right-bar-toggle waves-effect">
                     <i class="uil-shopping-cart" style="font-size: 30px"></i>
-                </button>
+                </a>
             </div>
             <div class="dropdown d-inline-block">
                 <button type="button" class="btn header-item waves-effect" id="page-header-user-dropdown"

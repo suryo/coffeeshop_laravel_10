@@ -19,7 +19,7 @@
                     <div class="card-header">Customers</div>
 
                     <div class="card-body">
-                        <table class="table">
+                        <table id="table" class="table display cell-border">
                             <thead>
                                 <tr>
                                     <th>ID</th>
@@ -51,4 +51,9 @@
             </div>
         </div>
     </div>
+@endsection
+@section('script')
+<script>
+    const table = new DataTable('#table',{});
+</script>
 @endsection

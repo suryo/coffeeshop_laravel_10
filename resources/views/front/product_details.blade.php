@@ -1,6 +1,6 @@
 @extends('frontmaster')
 @section('title')
-    Home
+    Product Details
 @endsection
 @section('content')
     <div class="row">
@@ -41,5 +41,5 @@
         </div>
     </div>
 @endsection
-@section('script')  
+@section('script')
 @endsection

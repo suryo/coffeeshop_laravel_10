@@ -19,7 +19,7 @@
 
         <div class="d-flex">
             <div class="d-inline-block">
-                <a type="button" class="btn header-item noti-icon right-bar-toggle waves-effect" href="#">
+                <a href="/cart" type="button" class="btn header-item noti-icon right-bar-toggle waves-effect">
                     <i class="uil-shopping-cart" style="font-size: 30px"></i>
                 </a>
             </div>

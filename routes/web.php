@@ -10,6 +10,7 @@ use App\Http\Controllers\ProductBrandController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\RegisterController;
+use App\Http\Controllers\CartController;
 
 /*
 |--------------------------------------------------------------------------
@@ -31,6 +32,7 @@ Route::get('/', [DashboardController::class, 'index']);
 //Front
 Route::get('/home', [HomeController::class, 'index']);
 Route::get('/product_details', [HomeController::class, 'product_details']);
+Route::get('/cart', [CartController::class, 'index']);
 
 //logout
 Route::get('/logout', [ProductController::class, 'create'])->name('logout');
