@@ -33,6 +33,7 @@ Route::get('/', [DashboardController::class, 'index']);
 Route::get('/home', [HomeController::class, 'index']);
 Route::get('/product_details', [HomeController::class, 'product_details']);
 Route::get('/cart', [CartController::class, 'index']);
+Route::get('/category', [HomeController::class, 'product_category']);
 
 //logout
 Route::get('/logout', [ProductController::class, 'create'])->name('logout');

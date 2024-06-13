@@ -59,7 +59,7 @@
         </div>
         <div class="row mt-4">
             <div class="col-sm-6">
-                <a href="/home" class="btn btn-link text-muted">
+                <a href="/home" class="btn btn-outline-dark">
                     <i class="uil uil-arrow-left me-1"></i> Continue Shopping </a>
             </div> <!-- end col -->
             <div class="col-sm-6">

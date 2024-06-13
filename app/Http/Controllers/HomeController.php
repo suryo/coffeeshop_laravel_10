@@ -15,4 +15,9 @@ class HomeController extends Controller
     {
         return view('front.product_details');
     }
+
+    public function product_category()
+    {
+        return view('front.product_category');
+    }
 }

@@ -4,6 +4,7 @@
 @endsection
 @section('content')
     <div class="row">
+        <a href="/home"><button class="btn btn-outline-success btn-lg mb-3"><i class="uil uil-shop"></i> Back to Home</button></a>
         <div class="col-lg-12">
             <div class="card">
                 <div class="card-body">
